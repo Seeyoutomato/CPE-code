@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	int N,a,b,n[1000],m[1000];
+	while(cin >> N){
+		if(N==0)
+			break;
+		cin >> a >> b; 
+		for(int z=0;z<N;z++){
+			cin >> n[z] >> m[z];
+		}
+		for(int y=0;y<N;y++){
+			if(a<n[y]&&b<m[y])
+				cout << "NE" << endl;
+			else if(a<n[y]&&b>m[y])
+				cout << "SE" << endl;
+			else if(a>n[y]&&b<m[y])
+				cout << "NO" << endl;
+			else if(a>n[y]&&b>m[y])
+				cout << "SO" << endl;
+			else
+				cout << "divisa" << endl;
+		}
+	}
+}
