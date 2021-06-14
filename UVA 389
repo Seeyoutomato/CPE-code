@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+#include <math.h>
+using namespace std;
+
+int main(){
+	int b,c,len,math=0,g=0;
+	string a;
+	while(cin >> a >> b >> c){   //a[]裡面的字元不能直接計算 
+		int mul=1,math=0;	
+		for(int z=a.length()-1; z>=0; z--){    //因為輸入a 不一定剛好七位數 
+			if(a[z]<='9'){
+				math += (a[z]-'0')*mul;
+			}
+			else{
+				math += (a[z]-'A'+10)*mul;
+			}
+			mul = mul*b;
+		}
+		//cout << math << endl;
+		//math =0;
+		string ans;
+		int cd;
+		for(int i=6;i>=0;i--){   //output要求固定七位數就好  不用再去管a.length 
+			cd = math%c;
+			if(cd <10)
+				ans[i] = cd + '0';
+			else
+				ans[i] = cd + 55;
+			math = math / c;
+		}
+		for(int j=0;j<7;j++){     //不能直接cout << ans << endl; 不知何原因 
+			if(ans[j]=='0')
+				cout << "0";
+			else
+				cout << ans[j];
+		}
+		cout << endl;
+	}
+}
