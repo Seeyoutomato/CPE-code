@@ -12,14 +12,13 @@ char who_biggest(int a,int b,int c,int d){
 	else if(d>a && d>b && d>c)
 		return 'T';
 }
-
+char data[55][1005];
+char ans[51];
 int main(){
 	int n,m,gh,cou,cou1,cou2,cou3; 
-	char ans[51]={};
 	cin >> gh;
 	for(int a=0;a<gh;a++){
 		cin >> m >> n;           //m列 n行 
-		char data[m][n];
 		for(int i=0;i<m;i++){
 			for(int j=0;j<n;j++){
 				cin >> data[i][j];
