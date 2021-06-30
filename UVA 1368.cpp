@@ -95,12 +95,12 @@ int main()
                 }
 
                 if(tempSum <= minNum){
-                    minDnaIndex = j;
+                    minDnaIndex = j;                        //紀錄是ACGT哪一次最小
                     minNum = tempSum;
                 }
             }
             ansSum += minNum;
-            ansDns[i] = const_dna[minDnaIndex];
+            ansDns[i] = const_dna[minDnaIndex];              //喜歡這裡
         }
         ansDns[n] = '\0';
 
